@@ -2,7 +2,7 @@ const { gql } = require("apollo-server-express");
 
 module.exports = gql`
   type Author {
-    name: String
+    name: String!
   }
 
   type Book {
@@ -12,8 +12,8 @@ module.exports = gql`
   }
 
   type Query {
-    hello: String
-    books: [Book]!
+    hello: String!
+    books: [Book]
     book(name: String!): Book
   }
 `;

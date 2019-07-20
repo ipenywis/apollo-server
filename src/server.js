@@ -1,13 +1,12 @@
 const express = require("express");
 const { ApolloServer, gql } = require("apollo-server-express");
 const PORT = 4000;
-const resolvers = require("./resolvers");
-const typeDefs = require("./schema");
 
+const typeDefs = require("./schema");
+const resolvers = require("./resolvers");
 const server = new ApolloServer({ typeDefs, resolvers });
 const app = express();
 
-//ALLOW CORS
 const cors = require("cors");
 app.use(cors());
 
